@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom right, #1a2a6c, #b21f1f, #fdbb2d); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentPlayer {
+    color: #fff;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    padding: 0.8rem 3rem;
+    text-align: center;
+    font-size: 1.2rem; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.grid {
+    width: 90%;
+    max-width: 22rem; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem; 
+}
+
+.gridItems {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.gridItems:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); 
+}
+
+.box1,
+.box2,
+.box5,
+.box4 {
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.box3,
+.box6 {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.box7,
+.box8 {
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1); 
+}
+
+.active {
+    display: flex;
+}
+
+.win {
+    background-color: rgba(0, 255, 0, 0.3);
+    animation: highlight 1s infinite alternate; 
+}
+
+@keyframes highlight {
+    from {
+        background-color: rgba(0, 255, 0, 0.3);
+    }
+    to {
+        background-color: rgba(0, 255, 0, 0.5);
+    }
+}
